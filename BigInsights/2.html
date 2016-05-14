@@ -1,0 +1,47 @@
+<html>
+  <head>
+  <h2 align="center"> Query-2 Which Month People Preffer to Travel the Most</h2>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Count' ],
+          ['Jan',  5010, ],
+          ['Feb',  4808, ],
+          ['Mar',  3000,  ],
+          ['Apr',  2500, ],
+		  ['May',  4500, ],
+		  ['Jun',  5000, ],
+		  ['Jul',  4300, ],
+		  ['Aug',  5201, ],
+		  ['Sep',  3500, ],
+		  ['Oct',  2569, ],
+		  ['Nov',  5000, ],
+		  ['Dec',  5500, ]
+        ]);
+
+        var options = {
+          title: 'Mothly Distribution of Tweets',
+         
+          legend: { position: 'bottom' },
+		   vAxis: {
+          title: 'Count'
+        },
+		 hAxis: {
+          title: 'Month'
+        },
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 1300px; height: 500px"></div>
+  </body>
+</html>

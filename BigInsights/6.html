@@ -1,0 +1,42 @@
+<html>
+  <head>
+  <h2 align="center"> Query-6 Tweeting Trends by Time Zones </h2>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Time Zone', 'TweetCount', 'RetweetCount'],
+          ['Pacific Time (US and Canada)', 23659, 21215],
+          ['London', 11000, 10000],
+          ['Eastern Time (US and Canada)', 9000, 7250],
+          ['Central Time (US and Canada)', 8500, 6548],
+		  ['Amsterdam', 4000, 3001],
+		  ['New Delhi', 6000, 5498],
+		  ['Beeijing', 5000, 3569],
+		  ['Tokyo', 7000, 3569],
+		  ['Jakarta', 2500, 1102]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Tweeting trends by Time Zone'
+            
+          },
+          bars: 'horizontal', // Required for Material Bar Charts.
+		  
+		 
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+  
+	<div id="barchart_material" style="width: 1100px; height: 500px; margin:0 auto;" ></div>
+  </body>
+</html>
